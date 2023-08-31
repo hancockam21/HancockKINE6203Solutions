@@ -109,12 +109,15 @@ S = sum(A)
 % the value of the myAge variable.
 
 
+myAge = 21
+ageLessTwo = myAge - 2
+agePlusOne = myAge + 1
 
 % 13. Use the built-in function namelengthmax to find out the maximum number of
 % characters that you can have in an identifier name under your version of
 % MATLAB. Assign the value to a variable called maxNameLength.
 
-
+namelengthmax = 63
 
 
 % 14. You need to convert some weight values from metric to standard units. 
