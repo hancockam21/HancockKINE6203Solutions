@@ -26,19 +26,21 @@ helpURL = 'https://www.mathworks.com/help/matlab/'
 
 % 2. What does the command 'clear all' do?
 %
-% Answer: (Delete this text and write your answer)
+% Answer: Clear all of the named variables from the workspace. 
 %
 
 
 % 3. Find a matlab function to take the average of the following
 % numbers [1 7 21 32 67 32453]? Store your answer in a variable called
 % averageAnswer.
-averageAnswer = 
+
+A = [1 7 21 32 67 32453]
+averageAnswer = mean(A)
 
 
 % 4. What command would you type to see a list of all installed toolboxes?
 
-        %<- command goes here
+      matlab.addons.toolbox.installedToolboxes %<- command goes here
 
 % 5. Write some commands that would return a list of all of the available 
 % functions in the image processing toolbox? 
@@ -52,7 +54,7 @@ x = linspace(-2*pi,2*pi);
 y = sin(x);
 
 figure
-        %<- command goes here
+       plot(x,y) %<- command goes here
 
         
 
@@ -61,14 +63,18 @@ figure
 % this function do and how would you use it?
 
 %
-% Answer: 
+% Answer: mattest performs a t-test looking at genotypes and phenotypes of
+% different genes and can be used to look at how well a data set supports
+% or refutes a hypothesis. 
 %
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
 
 %
-% Answer: 
+% Answer: The two major types of loops are for and while. For loops need
+% exact values to function and while loops only need a certain condition to
+% function. 
 % 
 
 
@@ -76,7 +82,8 @@ figure
 % an answer. 
 
 %
-% Answer: 
+% Answer: NaN stands for not a number and would appear when there is an
+% undefined number such as a number being divided by 0. 
 %
 
 
