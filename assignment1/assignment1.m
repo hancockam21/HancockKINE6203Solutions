@@ -195,7 +195,7 @@ colVec = transpose(rowVec)
 
 rows = randi([1,5])
 cols = randi([1,5])
-resultMat = zeros[rows, cols]
+resultMat = zeros(rows, cols)
 
 
 % 23. Create a vector of five random integers, each in the inclusive range 
@@ -206,13 +206,13 @@ originalVec = randi([-10 10],1,5)
 
 % - subtract 3 from each element
 
-subtract = originalVec - 3
+element = originalVec - 3
 % - count how many are positive
-
+count = find(element>0)
 
 % - get the absolute value of each element
 
-absolute = abs(subtract)
+absolute = abs(element)
 
 % - find the maximum.
 
@@ -224,8 +224,10 @@ maximum = max(absolute)
 % result of your calculation in a variable called trapArea. Comment your
 % code so that another user can understand what your code does. 
 
-
-
+% base1 = 12
+% base2 = 6
+% height = 4
+% trapArea = ((base1 + base2)/2)*(height)
 
 
 % 25. In sports marketing and other areas of sports management, 
