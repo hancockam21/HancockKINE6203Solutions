@@ -45,6 +45,8 @@ averageAnswer = mean(A)
 % 5. Write some commands that would return a list of all of the available 
 % functions in the image processing toolbox? 
 
+toolboxes = matlab.addons.toolbox.installedToolboxes
+struct2table(toolboxes)
 
 
 % 6. On the line below figure, write a command to draw a graph of 
@@ -258,7 +260,8 @@ ROI = ((totalRevenues - totalCosts) / totalCosts)*100
 
 %%% Enter the code for your program below this line
 
-
+X = 'Hello World'
+disp(X)
 
 
 
