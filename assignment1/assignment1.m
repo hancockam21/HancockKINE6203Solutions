@@ -102,7 +102,7 @@ sum(A, omitNaN)
 % could play a similar game on Matlab? Write the command that would launch
 % the game if so. 
 
-guide(minesweeper)
+
 
 
 % 12. Create a variable myAge and assign it the value of your age. Then 
