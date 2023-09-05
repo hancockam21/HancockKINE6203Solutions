@@ -102,8 +102,8 @@ sum(A, omitNaN)
 % could play a similar game on Matlab? Write the command that would launch
 % the game if so. 
 
-
-
+license(minesweepgame.m).txt
+% Would need to download minesweeper file prior to using this function. 
 
 % 12. Create a variable myAge and assign it the value of your age. Then 
 % create a new variable called ageLessTwo and subtract two from the value of the
@@ -261,8 +261,6 @@ ROI = ((totalRevenues - totalCosts) / totalCosts)*100
 %%% Enter the code for your program below this line
 
 X = 'Hello World'
-disp(X)
-
 f = msgbox('Hello World')
 
 
