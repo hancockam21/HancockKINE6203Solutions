@@ -43,18 +43,7 @@ if (userInput == "Y")
             disp(gameboard)
         else if(userInput == "F")
             gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"]
-        else if(userInput == "G")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"]
-            disp(gameboard)
-        else if(userInput == "H")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "X" "I"]
-            disp(gameboard)
-        elseif(userInput == "I")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"]
-        else 
-            disp('invalid user input')
-        end
-        
+        else if(us)
 else 
     disp('quitting game')
     % quit game 
