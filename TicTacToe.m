@@ -18,14 +18,12 @@
 % Welcome message 
 
 disp("Welcome to Tic Tac Toe. Play well and good luck!")
-
+% user is then asked if they would like to play. 
 userInput = input("Do you want to play? Y/N: (Enter a Y or a N and press return) ", "s")
 if (userInput == "Y")
-    % play game 
-    disp('playing game')
 
-    gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "I"];
     % gameboard is shown to user
+    gameboard = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];
     disp(gameboard)
 
 
@@ -33,6 +31,10 @@ if (userInput == "Y")
     userMoveOne = input("Enter the letter of the square you'd like to place your first move. ", "s")
     % put if user inputs ____, change that square to X. and so on. 
     
+    avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];  
+    % this is indicating the available inputs the user can choose from to
+    % place their first move. 
+
         if(userMoveOne == "A")
            
            gameboard = ["X" "B" "C"; "D" "E" "F"; "G" "H" "I"];
@@ -52,6 +54,7 @@ if (userInput == "Y")
             disp(gameboard)
         elseif(userMoveOne == "F")
             gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"]
+            disp(gameboard)
         elseif(userMoveOne == "G")
             gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"]
             disp(gameboard)
@@ -60,11 +63,25 @@ if (userInput == "Y")
             disp(gameboard)
         elseif(userMoveOne == "I")
             gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"]
+            disp(gameboard)
         else
             disp("invalid user input")
         end
+
+avail = (avail ~= userMoveOne);
+p = "A";
+compMoveOne = rand(avail, 1, "like", p );
+    while (compMoveOne = userMoveOne)
+        compMoveOne = rand(avail, 1, "like" p)
+    end 
+    if (compMoveOne ~= userMoveOne)
+        % need to change the value of compMoveOne in the gameboard to O. 
+
+
+
     % generate a value of "O" in one of the matrix entries that is not 
     % already equal to X (any matrix location that is still a letter)
+
 
         % computerMoveOne = rand(gameboard) ????
 
@@ -79,6 +96,7 @@ if (userInput == "Y")
 % if there is 3 X in a row, disp 'you won!'. If there are 3 O in a row,
 % disp 'game over' 
     
+
 
 else 
     disp("quitting game")
