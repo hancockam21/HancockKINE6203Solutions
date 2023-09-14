@@ -26,13 +26,13 @@ userInput = input("Do you want to play? Y/N: (Enter a Y or a N and press return)
     gameboard = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];
     disp(gameboard)
 
-avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
+ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 
     % Player's first move. 
     userMoveOne = input("Enter the letter of the square you'd like to place your first move. ", "s");
-    % put if user inputs ____, change that square to X. and so on. 
+    % if user inputs ____, change that square to X. and so on. 
     
-   % avail = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];  
+  avail = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];  
     % this is indicating the available inputs the user can choose from to
     % place their first move.
 
@@ -85,7 +85,6 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
             disp(gameboard)
             unavail = "H" ;
 
-
         elseif(userMoveOne == "I")
              posUserMoveOne = [3,3];
             gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"];
@@ -99,23 +98,107 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 avail = setdiff(avail, unavail); % only allow spaces that weren't used in 
                                  % move one to be available. 
 
-compMoveOne = randsample(avail,1);
+compMoveOne = randi(length(avail),1);
 
-while compMoveOne == "A"
-    old = "A" ;
-    new = "O" ;
-    newStr = replace(gameboard, old, new)
-end
-disp(gameboard)
- %   if (compMoveOne ~= userMoveOne)
-        % need to change the value of compMoveOne in the gameboard to O. 
+    if avail(1,compMoveOne) == "A"
+        gameboard(1,1) = "O";
+        unavail = "A";
+        disp(gameboard)
+    
+    elseif avail(1, compMoveOne) == "B" 
+        gameboard(1,2) = "O";
+        unavail = "B";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "C" 
+        gameboard(1,3) = "O";
+        unavail = "C";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "D"
+        gameboard(2, 1) = "O";
+        unavail = "D";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "E"
+        gameboard(2,2) = "O";
+        unavail = "E";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "F"
+        gameboard(2,3) = "O";
+        unavail = "F";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "G"
+        gameboard(3,1) = "O" ;
+        unavail = "G" ;
+        disp(gameboard) 
+
+    elseif avail(1, compMoveOne) == "H"
+        gameboard(3,2) = "O" ;
+        unavail = "H";
+        disp(gameboard)
+
+    elseif avail(1, compMoveOne) == "I"
+        gameboard(3,3) = "O";
+        unavail = "I";
+        disp(gameboard)
+    end 
+
+avail = setdiff(avail, unavail);  % updating available moves
+userMoveTwo = input("Where would you like to place your second move?" "s")
+    
+    if userMoveTwo = "A"
+        gameboard(1,1) = "X" ;
+        unavail = "A" ; 
+        disp(gameboard)
+
+    elseif userMoveTwo = "B" 
+        gameboard(1,2) = "X" ; 
+        unavail = "B" ;
+        disp(gameboard) 
+
+    elseif userMoveTwo = "C" 
+        gameboard(1,3) = "X" ;
+        unavail = "C" ;
+        disp(gameboard)
+        
+    elseif userMoveTwo = "D" 
+        gameboard(2,1) = "X" ;
+        unavail = "D" ; 
+        disp(gameboard)
+        
+    elseif userMoveTwo = "E"
+        gameboard(2,2) = "X" ;
+        unavail = "E" ;
+        disp(gameboard)
+
+    elseif userMoveTwo = "F" 
+        gameboard(2,3) = "X" ; 
+        unavail = "F" ;
+        disp(gameboard) 
+
+    elseif userMoveTwo = "G" 
+        gameboard(3,1) = "X" ;
+        unavail = "G" ;
+        disp(gameboard)
+
+    elseif userMoveTwo = "H" 
+        gameboard(3,2) = "X" ;
+        unavail = "H" ;
+        disp(gameboard)
+        
+    elseif userMoveTwo = "I"
+        gameboard(3,3) = "X" ;
+        unavail = "I" ;
+        disp(gameboard)
+    end 
+
+
+
     
 
-
-    % generate a value of "O" in one of the matrix entries that is not 
-    % already equal to X (any matrix location that is still a letter)
-
-% userMoveTwo = input("Where would you like to place your second move?" "s")
        
 
 
