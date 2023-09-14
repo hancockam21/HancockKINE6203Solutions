@@ -31,7 +31,7 @@ if (userInput == "Y")
     userMoveOne = input("Enter the letter of the square you'd like to place your first move. ", "s")
     % put if user inputs ____, change that square to X. and so on. 
     
-    avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];  
+    avail = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];  
     % this is indicating the available inputs the user can choose from to
     % place their first move. 
 
@@ -41,42 +41,49 @@ if (userInput == "Y")
            disp(gameboard)
 
         elseif(userMoveOne == "B")
-            gameboard = ["A" "X" "C"; "D" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "X" "C"; "D" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "C")
-            gameboard = ["A" "B" "X"; "D" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "X"; "D" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "D")
-            gameboard = ["A" "B" "C"; "X" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "X" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "E")
-            gameboard = ["A" "B" "C"; "D" "X" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "X" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "F")
-            gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "G")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "H")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "X" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "X" "I"];
             disp(gameboard)
         elseif(userMoveOne == "I")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"];
             disp(gameboard)
         else
             disp("invalid user input")
         end
 
 avail = (avail ~= userMoveOne);
-p = "A";
+moveOneRow = rand(1:3);
+moveOneColumn = rand(1:3);
+compMoveOne = (moveOneRow, moveOneColumn)
+while compMoveOne = 
+
+
+p = "A" 
 compMoveOne = rand(avail, 1, "like", p );
     while (compMoveOne = userMoveOne)
         compMoveOne = rand(avail, 1, "like" p)
     end 
+
     if (compMoveOne ~= userMoveOne)
         % need to change the value of compMoveOne in the gameboard to O. 
-
+    
 
 
     % generate a value of "O" in one of the matrix entries that is not 

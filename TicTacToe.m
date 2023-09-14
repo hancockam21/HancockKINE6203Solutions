@@ -20,20 +20,19 @@
 disp("Welcome to Tic Tac Toe. Play well and good luck!")
 % user is then asked if they would like to play. 
 userInput = input("Do you want to play? Y/N: (Enter a Y or a N and press return) ", "s")
-if (userInput == "Y")
 
+    if (userInput == "Y")
     % gameboard is shown to user
     gameboard = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];
     disp(gameboard)
-
 
     % Player's first move. 
     userMoveOne = input("Enter the letter of the square you'd like to place your first move. ", "s")
     % put if user inputs ____, change that square to X. and so on. 
     
-    avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];  
+    avail = ["A" "B" "C"; "D" "E" "F"; "G" "H" "I"];  
     % this is indicating the available inputs the user can choose from to
-    % place their first move. 
+    % place their first move.
 
         if(userMoveOne == "A")
            
@@ -41,42 +40,59 @@ if (userInput == "Y")
            disp(gameboard)
 
         elseif(userMoveOne == "B")
-            gameboard = ["A" "X" "C"; "D" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "X" "C"; "D" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "C")
-            gameboard = ["A" "B" "X"; "D" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "X"; "D" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "D")
-            gameboard = ["A" "B" "C"; "X" "E" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "X" "E" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "E")
-            gameboard = ["A" "B" "C"; "D" "X" "F" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "X" "F" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "F")
-            gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "X" ; "G" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "G")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "X" "H" "I"];
             disp(gameboard)
         elseif(userMoveOne == "H")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "X" "I"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "X" "I"];
             disp(gameboard)
         elseif(userMoveOne == "I")
-            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"]
+            gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"];
             disp(gameboard)
         else
             disp("invalid user input")
         end
 
 avail = (avail ~= userMoveOne);
-p = "A";
+moveOneRow = rand(1:3);
+moveOneColumn = rand(1:3);
+compMoveOne = [moveOneRow , moveOneColumn];
+unavail = find(gameboard = X); % Finding where there is already an X so the 
+                              % computer can't move there ??
+while compMoveOne == unavail
+    moveOneRow = rand(1:3);
+    moveOneColumn = rand(1:3);
+    compMoveOne = [moveOneRow , moveOneColumn];
+end % looping to randomly choose a new position (row and column)
+
+if compMoveOne ~= unavail
+    % need to change position in gameboard to O.
+    % Would i need to specify the position of each "_" character. such as
+    % "A" = [1,1] ?? 
+
+p = "A" 
 compMoveOne = rand(avail, 1, "like", p );
     while (compMoveOne = userMoveOne)
         compMoveOne = rand(avail, 1, "like" p)
     end 
+
     if (compMoveOne ~= userMoveOne)
         % need to change the value of compMoveOne in the gameboard to O. 
-
+    
 
 
     % generate a value of "O" in one of the matrix entries that is not 
