@@ -13,7 +13,7 @@
 % Tested using Matlab R2023a
 % Tested on Macbook Air 
 
-% Last updated 09/15/2023
+% Last updated 09/11/2023
 
 % Welcome message 
 
@@ -22,7 +22,7 @@ disp("Welcome to Tic Tac Toe. Play well and good luck!")
 userInput = input("Do you want to play? Y/N: (Enter a Y or a N and press return) ", "s")
 if (userInput == "Y")
 
-    gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"];
+   
     disp(gameboard)  % gameboard is shown to user
 
 avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
@@ -101,7 +101,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         
     elseif avail(1, compMoveOne) == "C" 
         gameboard(1,3) = "O";
-        unavail = "C" ; 
+        unavil = "C" ; 
         disp(gameboard)
 
     elseif avail(1, compMoveOne) == "D"
@@ -143,7 +143,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 
     if userMoveTwo == "A" 
         gameboard(1,1) = "X" ;
-        unavail = "A" ; 
+        unavil = "A" ; 
         disp(gameboard)
 
     elseif userMoveTwo == "B" 
@@ -206,7 +206,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         
     elseif avail(1, compMoveTwo) == "C" 
         gameboard(1,3) = "O";
-        unavail = "C" ; 
+        unavil = "C" ; 
         disp(gameboard)
 
     elseif avail(1, compMoveTwo) == "D"
@@ -248,7 +248,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 
     if userMoveThree == "A" 
         gameboard(1,1) = "X" ;
-        unavail = "A" ; 
+        unavil = "A" ; 
         disp(gameboard)
 
     elseif userMoveThree == "B" 
@@ -316,7 +316,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         
     elseif avail(1, compMoveThree) == "C" 
         gameboard(1,3) = "O";
-        unavail = "C" ; 
+        unavil = "C" ; 
         disp(gameboard)
 
     elseif avail(1, compMoveThree) == "D"
@@ -358,7 +358,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
 
     if userMoveFour == "A" 
         gameboard(1,1) = "X" ;
-        unavail = "A" ; 
+        unavil = "A" ; 
         disp(gameboard)
 
     elseif userMoveFour == "B" 
@@ -456,58 +456,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
     
     end 
 
-    avail = setdiff(avail, unavail) ;  % updating available moves based on 
-                                     % computer's second move. 
     
-   userMoveFive = input("Where would you like to place your fifth and final move? Remember: Be Strategic.", "s")
-
-    if userMoveFive == "A" 
-        gameboard(1,1) = "X" ;
-        unavail = "A" ; 
-        disp(gameboard)
-
-    elseif userMoveFive == "B" 
-        gameboard(1,2) = "X" ;
-        unavail = "B" ;
-        disp(gameboard)
-   
-    elseif userMoveFive == "C" 
-        gameboard(1,3) = "X" ;
-        unavail = "C" ;
-        disp(gameboard)
-
-    elseif userMoveFive == "D" 
-        gameboard(2,1) = "X" ;
-        unavail = "D" ;
-        disp(gameboard)
-      
-    elseif userMoveFive == "E" 
-        gameboard(2,2) = "X" ;
-        unavail = "E" ;
-        disp(gameboard)
-      
-    elseif userMoveFive == "F" 
-        gameboard(2,3) = "X" ;
-        unavail = "F" ;
-        disp(gameboard)
-
-    elseif userMoveFive == "G" 
-        gameboard(3,1) = "X" ;
-        unavail = "G" ;
-        disp(gameboard)
-
-    elseif userMoveFive == "H" 
-        gameboard(3,2) = "X" ;
-        unavail = "H" ;
-        disp(gameboard)
-
-    elseif userMoveFive == "I" 
-        gameboard(3,3) = "X" ;
-        unavail = "I" ;
-        disp(gameboard)
-
-    end
-
 else 
     disp("quitting game")
     % quit game 
