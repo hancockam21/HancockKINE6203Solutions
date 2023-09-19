@@ -13,7 +13,7 @@
 % Tested using Matlab R2023a
 % Tested on Macbook Air 
 
-% Last updated 09/15/2023
+% Last updated 09/16/2023
 
 % Welcome message 
 
@@ -298,6 +298,38 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 % if there is 3 X in a row, disp 'you won!'. If there are 3 O in a row,
 % disp 'game over' 
     
+    posA = gameboard(1,1);
+    posB = gameboard(1,2);
+    posC = gameboard(1,3);
+    posD = gameboard(2,1);
+    posE = gameboard(2,2);
+    posF = gameboard(2,3);
+    posG = gameboard(3,1);
+    posH = gameboard(3,2);
+    posI = gameboard(3,3);    % specifiying which position of the gamebaord 
+                              % each character is so that i can have the
+                              % code check for if there is a winner. 
+
+    while posA == "X" && posB == "X" && posC == "X"
+        
+        disp("You Won!!!") 
+    end 
+
+    while posD == "X" && posE == "X" && posF == "X"
+
+        disp("You Won!!!")
+    end 
+
+    while posG == "X" && posH == "X" && posI == "X"
+
+        disp("You Won!!!")
+    end 
+
+    while posA == "X" && posD == "X" && posG == "X"
+        disp("You Won!!!")
+    end
+
+    
  avail = setdiff(avail, unavail) ;
 
     compMoveThree = randi(length(avail), 1); % choosing a random point of vector
@@ -508,8 +540,8 @@ avail = setdiff(avail, unavail);   % updating available moves based on
 
     end
 
-else 
+    else 
     disp("quitting game")
     % quit game 
-        end
+    end
         
