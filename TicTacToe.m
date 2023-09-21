@@ -13,7 +13,7 @@
 % Tested using Matlab R2023a
 % Tested on Macbook Air 
 
-% Last updated 09/16/2023
+% Last updated 09/21/2023
 
 % Welcome message 
 
@@ -313,22 +313,33 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     while posA == "X" && posB == "X" && posC == "X"
         
         disp("You Won!!!") 
+        break
     end 
 
     while posD == "X" && posE == "X" && posF == "X"
 
         disp("You Won!!!")
-    end 
+        break
+    end
 
     while posG == "X" && posH == "X" && posI == "X"
 
         disp("You Won!!!")
+        break
     end 
 
     while posA == "X" && posD == "X" && posG == "X"
         disp("You Won!!!")
+        break
     end
 
+    %%%% if any of the while loops are true, break statement keeps it from
+    %%%% repeating 'you won!!' over and over. 
+
+    % need to make it so that when there is a true while statement, it
+    % doens't continue to the next computer move because its running the
+    % rest of the code. need to get it to move to end of game and ask if
+    % they want to play again. 
     
  avail = setdiff(avail, unavail) ;
 
