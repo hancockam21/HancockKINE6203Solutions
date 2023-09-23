@@ -309,8 +309,49 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     posI = gameboard(3,3);    % specifiying which position of the gamebaord 
                               % each character is so that i can have the
                               % code check for if there is a winner. 
-% Lines 313-356 are checking for a user win. If there is 3 in a row of X,
-% it displays that the user won. 
+% the 
+    while posA == "X" && posB == "X" && posC == "X"
+        
+        disp("You Won!!!") 
+        break
+    end 
+
+    while posD == "X" && posE == "X" && posF == "X"
+
+        disp("You Won!!!")
+        break
+    end
+
+    while posG == "X" && posH == "X" && posI == "X"
+
+        disp("You Won!!!")
+        break
+    end 
+
+    while posA == "X" && posD == "X" && posG == "X"
+        disp("You Won!!!")
+        break
+    end
+
+    while posB == "X" && posE == "X" && posH == "X"
+        disp("You Won!!!")
+        break
+    end 
+
+    while posC == "X" && posF == "X" && posI == "X"
+        disp("You Won!!!")
+        break 
+    end 
+
+    while posA == "X" && posE == "X" && posI == "X"
+        disp("You Won!!!")
+        break 
+    end 
+
+    while posC == "X" && posE == "X" && posH == "G"
+        disp("You Won!!!")
+        break 
+    end 
 
     while posA == "X" && posB == "X" && posC == "X"
         
@@ -355,59 +396,8 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         break 
     end 
 
-    % Lines 360-407 are checking for if the computer won. If there is 3 Os
-    % in a row, it displays that the user lost. 
-
-    while posA == "O" && posB == "O" && posC == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posD == "O" && posE == "O" && posF == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posG == "O" && posH == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posA == "O" && posD == "O" && posG == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posB == "O" && posE == "O" && posH == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posC == "O" && posF == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posA == "O" && posE == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posC == "O" && posE == "O" && posG == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end  
-
     %%%% if any of the while loops are true, break statement keeps it from
-    %%%% repeating 'you won!!' or 'oh no! you lost!!! over and over. 
+    %%%% repeating 'you won!!' over and over. 
 
     % need to make it so that when there is a true while statement, it
     % doesn't continue to the next computer move because its running the
