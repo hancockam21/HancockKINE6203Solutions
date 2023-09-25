@@ -13,10 +13,9 @@
 % Tested using Matlab R2023a
 % Tested on Macbook Air 
 
-% Last updated 09/22/2023
+% Last updated 09/25/2023
 
-% Welcome message 
-
+% Welcome Message
 disp("Welcome to Tic Tac Toe. Play well and good luck!")
 
 userInput = input("Do you want to play? Y/N: (Enter a Y or a N and press return) ", "s")
@@ -244,7 +243,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
    avail = setdiff(avail, unavail) ;  % updating available moves based on 
                                      % computer's second move. 
     
-   userMoveThree = input("Where would you like to place your third move? Remember: Be Strategic.", "s");
+   userMoveThree = input("Where would you like to place your third move? Remember: Be Strategic.", "s") 
 
     if userMoveThree == "A" 
         gameboard(1,1) = "X" ;
@@ -307,104 +306,41 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     posG = gameboard(3,1);
     posH = gameboard(3,2);
     posI = gameboard(3,3);    % specifiying which position of the gamebaord 
-                              % each character is so that i can have the
-                              % code check for if there is a winner. 
+                              % each character is so that the code can check 
+                              % if there is a winner. 
+
 % Lines 313-356 are checking for a user win. If there is 3 in a row of X,
 % it displays that the user won. 
 
-    while posA == "X" && posB == "X" && posC == "X"
-        
+    while posA == "X" && posB == "X" && posC == "X" || ... % the ... continues the code into the next line
+          posD == "X" && posE == "X" && posF == "X" || ...
+          posG == "X" && posH == "X" && posI == "X" || ...
+          posA == "X" && posD == "X" && posG == "X" || ...
+          posB == "X" && posE == "X" && posH == "X" || ... 
+          posC == "X" && posF == "X" && posI == "X" || ...
+          posA == "X" && posE == "X" && posI == "X" || ...
+          posC == "X" && posE == "X" && posH == "G" 
+
         disp("You Won!!!") 
         break
     end 
-
-    while posD == "X" && posE == "X" && posF == "X"
-
-        disp("You Won!!!")
-        break
-    end
-
-    while posG == "X" && posH == "X" && posI == "X"
-
-        disp("You Won!!!")
-        break
-    end 
-
-    while posA == "X" && posD == "X" && posG == "X"
-        disp("You Won!!!")
-        break
-    end
-
-    while posB == "X" && posE == "X" && posH == "X"
-        disp("You Won!!!")
-        break
-    end 
-
-    while posC == "X" && posF == "X" && posI == "X"
-        disp("You Won!!!")
-        break 
-    end 
-
-    while posA == "X" && posE == "X" && posI == "X"
-        disp("You Won!!!")
-        break 
-    end 
-
-    while posC == "X" && posE == "X" && posH == "G"
-        disp("You Won!!!")
-        break 
-    end 
+ 
 
     % Lines 360-407 are checking for if the computer won. If there is 3 Os
     % in a row, it displays that the user lost. 
 
-    while posA == "O" && posB == "O" && posC == "O"
-        
+    while posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+        posD == "O" && posE == "O" && posF == "O" || ...
+        posG == "O" && posH == "O" && posI == "O" || ... 
+        posA == "O" && posD == "O" && posG == "O" || ...
+        posB == "O" && posE == "O" && posH == "O" || ...
+        posC == "O" && posF == "O" && posI == "O" || ...
+        posA == "O" && posE == "O" && posI == "O" || ...
+        posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
         break
     end 
 
-    while posD == "O" && posE == "O" && posF == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posG == "O" && posH == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posA == "O" && posD == "O" && posG == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posB == "O" && posE == "O" && posH == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posC == "O" && posF == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posA == "O" && posE == "O" && posI == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end 
-
-    while posC == "O" && posE == "O" && posG == "O"
-        
-        disp("Oh No! You Lost!!!") 
-        break
-    end  
 
     %%%% if any of the while loops are true, break statement keeps it from
     %%%% repeating 'you won!!' or 'oh no! you lost!!! over and over. 
@@ -555,7 +491,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         unavail = "F"; 
         disp(gameboard)
 
-    elseif avail(1, compMoveTour) == "G"
+    elseif avail(1, compMoveFour) == "G"
         gameboard(3,1) = "O" ; 
         unavail = "G"; 
         disp(gameboard)
