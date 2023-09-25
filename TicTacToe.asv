@@ -343,13 +343,6 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         break 
     end 
 
-    newGame = questdlg("Would you like to play again? Please enter Y or N as your response.")
-    switch newGame
-        case "N"
-        continue 
-        case "Y"
-            gameboard = [ "A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]
-    end 
 
     %%%% if any of the while loops are true, break statement keeps it from
     %%%% repeating 'you won!!' or 'oh no! you lost!!! over and over. 
@@ -427,7 +420,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         disp("You Won!!!") 
         break
     end 
-       
+
 
     while posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
@@ -439,14 +432,6 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
         break
-    end 
-  
-    newGame = questdlg("Would you like to play again? Please enter Y or N as your response.")
-    switch newGame
-        case "N"
-        continue 
-        case "Y"
-            gameboard = [ "A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]
     end 
 
 avail = setdiff(avail, unavail);   % updating available moves based on 
@@ -527,13 +512,6 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         break
     end 
 
-    newGame = questdlg("Would you like to play again? Please enter Y or N as your response.")
-    switch newGame
-        case "N"
-        continue 
-        case "Y"
-            gameboard = [ "A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]
-    end 
  avail = setdiff(avail, unavail) ;
 
     compMoveFour = randi(length(avail), 1); % choosing a random point of vector
@@ -614,13 +592,6 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         break
     end 
 
-    newGame = questdlg("Would you like to play again? Please enter Y or N as your response.")
-    switch newGame
-        case "N"
-        continue 
-        case "Y"
-            gameboard = [ "A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]
-    end 
 
     avail = setdiff(avail, unavail) ;  % updating available moves based on 
                                      % computer's second move. 
@@ -700,13 +671,8 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         disp("Oh No! You Lost!!!") 
         break
     end 
-newGame = questdlg("Would you like to play again? Please enter Y or N as your response.")
-    switch newGame
-        case "N"
-        continue 
-        case "Y"
-            gameboard = [ "A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]
-    end 
+
+
 end 
     while (userInput == "N")
         disp("Quitting Game! Goodbye!")
