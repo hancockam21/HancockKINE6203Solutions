@@ -349,6 +349,8 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     % doesn't continue to the next computer move because its running the
     % rest of the code. need to get it to move to end of game and ask if
     % they want to play again. 
+
+    % also need to code for if there is a tie in the game. 
     
  avail = setdiff(avail, unavail) ;
 
