@@ -142,47 +142,47 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
 
   userMoveTwo = input("Where would you like to place your second move?", "s")
 
-    if userMoveTwo == "A" 
+    if userMoveTwo == "A" \ "a'"
         gameboard(1,1) = "X" ;
         unavail = "A" ; 
         disp(gameboard)
 
-    elseif userMoveTwo == "B" 
+    elseif userMoveTwo == "B" \ "b"
         gameboard(1,2) = "X" ;
         unavail = "B" ;
         disp(gameboard)
    
-    elseif userMoveTwo == "C" 
+    elseif userMoveTwo == "C" \ "c"
         gameboard(1,3) = "X" ;
         unavail = "C" ;
         disp(gameboard)
 
-    elseif userMoveTwo == "D" 
+    elseif userMoveTwo == "D" \ "d"
         gameboard(2,1) = "X" ;
         unavail = "D" ;
         disp(gameboard)
       
-    elseif userMoveTwo == "E" 
+    elseif userMoveTwo == "E" \ "e"
         gameboard(2,2) = "X" ;
         unavail = "E" ;
         disp(gameboard)
       
-    elseif userMoveTwo == "F" 
+    elseif userMoveTwo == "F" \ "f"
         gameboard(2,3) = "X" ;
         unavail = "F" ;
         disp(gameboard)
 
-    elseif userMoveTwo == "G" 
+    elseif userMoveTwo == "G" \ "g"
         gameboard(3,1) = "X" ;
         unavail = "G" ;
         disp(gameboard)
 
-    elseif userMoveTwo == "H" 
+    elseif userMoveTwo == "H" \ "h"
         gameboard(3,2) = "X" ;
         unavail = "H" ;
         disp(gameboard)
 
-    elseif userMoveTwo == "I" 
+    elseif userMoveTwo == "I" \ "i"
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
@@ -247,47 +247,47 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     
    userMoveThree = input("Where would you like to place your third move? Remember: Be Strategic.", "s") 
 
-    if userMoveThree == "A" 
+    if userMoveThree == "A" \ "a"
         gameboard(1,1) = "X" ;
         unavail = "A" ; 
         disp(gameboard)
 
-    elseif userMoveThree == "B" 
+    elseif userMoveThree == "B" \ "b"
         gameboard(1,2) = "X" ;
         unavail = "B" ;
         disp(gameboard)
    
-    elseif userMoveThree == "C" 
+    elseif userMoveThree == "C" \ "c"
         gameboard(1,3) = "X" ;
         unavail = "C" ;
         disp(gameboard)
 
-    elseif userMoveThree == "D" 
+    elseif userMoveThree == "D" \ "d"
         gameboard(2,1) = "X" ;
         unavail = "D" ;
         disp(gameboard)
       
-    elseif userMoveThree == "E" 
+    elseif userMoveThree == "E" \ "e"
         gameboard(2,2) = "X" ;
         unavail = "E" ;
         disp(gameboard)
       
-    elseif userMoveThree == "F" 
+    elseif userMoveThree == "F" \ "f"
         gameboard(2,3) = "X" ;
         unavail = "F" ;
         disp(gameboard)
 
-    elseif userMoveThree == "G" 
+    elseif userMoveThree == "G" \ "g"
         gameboard(3,1) = "X" ;
         unavail = "G" ;
         disp(gameboard)
 
-    elseif userMoveThree == "H" 
+    elseif userMoveThree == "H" \ "h"
         gameboard(3,2) = "X" ;
         unavail = "H" ;
         disp(gameboard)
 
-    elseif userMoveThree == "I" 
+    elseif userMoveThree == "I" \ "i"
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
@@ -454,47 +454,47 @@ avail = setdiff(avail, unavail);   % updating available moves based on
     
    userMoveFour = input("Where would you like to place your fourth move? Remember: Be Strategic.", "s")
 
-    if userMoveFour == "A" 
+    if userMoveFour == "A" \ "a"
         gameboard(1,1) = "X" ;
         unavail = "A" ; 
         disp(gameboard)
 
-    elseif userMoveFour == "B" 
+    elseif userMoveFour == "B" \ "b"
         gameboard(1,2) = "X" ;
         unavail = "B" ;
         disp(gameboard)
    
-    elseif userMoveFour == "C" 
+    elseif userMoveFour == "C" \ "c"
         gameboard(1,3) = "X" ;
         unavail = "C" ;
         disp(gameboard)
 
-    elseif userMoveFour == "D" 
+    elseif userMoveFour == "D" \ "d"
         gameboard(2,1) = "X" ;
         unavail = "D" ;
         disp(gameboard)
       
-    elseif userMoveFour == "E" 
+    elseif userMoveFour == "E" \ "e"
         gameboard(2,2) = "X" ;
         unavail = "E" ;
         disp(gameboard)
       
-    elseif userMoveFour == "F" 
+    elseif userMoveFour == "F" \ "f"
         gameboard(2,3) = "X" ;
         unavail = "F" ;
         disp(gameboard)
 
-    elseif userMoveFour == "G" 
+    elseif userMoveFour == "G" \ "g"
         gameboard(3,1) = "X" ;
         unavail = "G" ;
         disp(gameboard)
 
-    elseif userMoveFour == "H" 
+    elseif userMoveFour == "H" \ "h"
         gameboard(3,2) = "X" ;
         unavail = "H" ;
         disp(gameboard)
 
-    elseif userMoveFour == "I" 
+    elseif userMoveFour == "I" \ "i"
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
@@ -632,42 +632,42 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         unavail = "A" ; 
         disp(gameboard)
 
-    elseif userMoveFive == "B" 
+    elseif userMoveFive == "B" \ "b"
         gameboard(1,2) = "X" ;
         unavail = "B" ;
         disp(gameboard)
    
-    elseif userMoveFive == "C" 
+    elseif userMoveFive == "C" \ "c"
         gameboard(1,3) = "X" ;
         unavail = "C" ;
         disp(gameboard)
 
-    elseif userMoveFive == "D" 
+    elseif userMoveFive == "D" \ "d"
         gameboard(2,1) = "X" ;
         unavail = "D" ;
         disp(gameboard)
       
-    elseif userMoveFive == "E" 
+    elseif userMoveFive == "E" \ "e"
         gameboard(2,2) = "X" ;
         unavail = "E" ;
         disp(gameboard)
       
-    elseif userMoveFive == "F" 
+    elseif userMoveFive == "F" \ "f"
         gameboard(2,3) = "X" ;
         unavail = "F" ;
         disp(gameboard)
 
-    elseif userMoveFive == "G" 
+    elseif userMoveFive == "G" \ "g"
         gameboard(3,1) = "X" ;
         unavail = "G" ;
         disp(gameboard)
 
-    elseif userMoveFive == "H" 
+    elseif userMoveFive == "H" \ "h"
         gameboard(3,2) = "X" ;
         unavail = "H" ;
         disp(gameboard)
 
-    elseif userMoveFive == "I" 
+    elseif userMoveFive == "I" \ "i"
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
