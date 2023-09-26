@@ -236,7 +236,8 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         unavail = "H"; 
         disp(gameboard)
     
-    else avail(1, compMoveTwo) == "I"
+    else 
+        avail(1, compMoveTwo) == "I"
         gameboard(3,3) = "O" ; 
         unavail = "I"; 
         disp(gameboard)
@@ -246,7 +247,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
    avail = setdiff(avail, unavail) ;  % updating available moves based on 
                                      % computer's second move. 
     
-   userMoveThree = input("Where would you like to place your third move? Remember: Capital letters only and be strategic.", "s") 
+   userMoveThree = input("Where would you like to place your third move? Remember: Be capital letters only and be strategic.", "s") 
 
     if userMoveThree == "A" 
         gameboard(1,1) = "X" ;
@@ -289,7 +290,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         disp(gameboard)
 
     else 
-userMoveThree == "I" 
+        userMoveThree == "I" 
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
@@ -327,9 +328,9 @@ userMoveThree == "I"
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
+        
 
-    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    else posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -338,7 +339,7 @@ userMoveThree == "I"
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+         
 
     end 
      %%%% if any of the while loops are true, break statement keeps it from
@@ -415,9 +416,10 @@ userMoveThree == "I"
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
+         
 
-    elseif  posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    else 
+        posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -426,7 +428,7 @@ userMoveThree == "I"
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+         
 
     end
   
@@ -494,9 +496,9 @@ avail = setdiff(avail, unavail);   % updating available moves based on
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
+         
 
-    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    else posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -505,7 +507,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+         
 
     end
 
@@ -572,9 +574,9 @@ avail = setdiff(avail, unavail);   % updating available moves based on
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
+         
 
-    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    else posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -583,7 +585,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+         
 
     end
 
@@ -651,7 +653,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         disp("You Won!!!") 
         break 
 
-    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    else posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
