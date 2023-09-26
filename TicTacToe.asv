@@ -668,8 +668,7 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         disp("Oh No! You Lost!!!") 
         break 
         
-    else 
-        disp('Oh No! There was a tie! No winner!')
+    else disp('Oh No! There was a tie! No winner!')
 
     end
 end
