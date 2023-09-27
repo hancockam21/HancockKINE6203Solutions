@@ -72,20 +72,22 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
             disp(gameboard)
             unavail = "H" ;
 
-        elseif(userMoveOne == "I")
+        elseif (userMoveOne) == "I"
             gameboard = ["A" "B" "C"; "D" "E" "F" ; "G" "H" "X"];
             disp(gameboard)
             unavail = "I" ;
 
-        else
-            disp("invalid user input")
+        else 
+        disp("Invalid Input. Starting Game Over")
+        continue
+
         end
 
 
  avail = setdiff(avail, unavail); % this updates the available entries to 
                                   % not include what was chosen in the
                                   % first move. 
-    disp("Computers Turn!")
+    disp("Computer's Turn!")
    compMoveOne = randi(length(avail), 1); % picks a random available letter 
                                           % by choosing a location in the
                                           % 'available' vector. 
@@ -131,7 +133,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         disp(gameboard)
     
     else 
-        avail(1, compMoveOne) == "I" ; 
+        avail(1, compMoveOne) = "I" ; 
         gameboard(3,3) = "O" ; 
         unavail = "I"; 
         disp(gameboard)
@@ -141,7 +143,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
     avail = setdiff(avail, unavail) ; % updating available characters after move. 
 
 
-  userMoveTwo = input("Where would you like to place your second move? Remember: Capital letters only.", "s")
+  userMoveTwo = input("Where would you like to place your second move? Remember: Capital letters only. ", "s");
 
     if userMoveTwo == "A" 
         gameboard(1,1) = "X" ;
@@ -183,17 +185,19 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         unavail = "H" ;
         disp(gameboard)
 
-    else 
-        userMoveTwo == "I" 
+    elseif userMoveTwo == "I" 
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
-
+    
+    else 
+        disp("Invalid Input. Starting Game Over")
+        continue
     end
 
     avail = setdiff(avail, unavail) ;
 
-    disp("Computers Turn!")
+    disp("Computer's Turn!")
     compMoveTwo = randi(length(avail), 1); % choosing a random point of vector
                                            % 'avail' to place the
                                            % computer's move
@@ -239,7 +243,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         disp(gameboard)
     
     else 
-        avail(1, compMoveTwo) == "I"
+        avail(1, compMoveTwo) = "I" ; 
         gameboard(3,3) = "O" ; 
         unavail = "I"; 
         disp(gameboard)
@@ -249,7 +253,7 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
    avail = setdiff(avail, unavail) ;  % updating available moves based on 
                                      % computer's second move. 
     
-   userMoveThree = input("Where would you like to place your third move? Remember: Capital letters only and be strategic.", "s") 
+   userMoveThree = input("Where would you like to place your third move? Remember: Capital letters only and be strategic. ", "s") ; 
 
     if userMoveThree == "A" 
         gameboard(1,1) = "X" ;
@@ -291,11 +295,14 @@ avail = ["A" "B" "C" "D" "E" "F" "G" "H" "I"];
         unavail = "H" ;
         disp(gameboard)
 
-    else 
-userMoveThree == "I" 
+    elseif userMoveThree == "I" 
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
+
+    else  
+        disp("Invalid Input. Starting Game Over")
+        continue
 
     end
     
@@ -316,8 +323,8 @@ userMoveThree == "I"
                               % each character is so that the code can check 
                               % if there is a winner. 
 
-% Lines 321-344 are checking for a user win. If there is 3 in a row of X,
-% it displays that the user won. LInes 326-334 are checking for a
+% Lines 331-338 are checking for a user win. If there is 3 in a row of X,
+% it displays that the user won. LInes 349-357 are checking for a
 % computerwin. If there is 3 in a row of O, it displays that the user lost.
 % 
 
@@ -329,11 +336,17 @@ userMoveThree == "I"
           posC == "X" && posF == "X" && posI == "X" || ...
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
-        disp("You Won!!!") 
-        break
 
-    else 
-        posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+         newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+        end 
+
+    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -342,21 +355,23 @@ userMoveThree == "I"
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end 
     end 
-     %%%% if any of the while loops are true, break statement keeps it from
+
+     %%%% if any of the while loops are true, continue statement keeps it from
     %%%% repeating 'you won!!' or 'oh no! you lost!!! over and over. 
-
-    % need to make it so that when there is a true while statement, it
-    % doesn't continue to the next computer move because its running the
-    % rest of the code. need to get it to move to end of game and ask if
-    % they want to play again. 
-
-    % also need to code for if there is a tie in the game. 
     
-    avail = setdiff(avail, unavail)
 
-    disp("Computers Turn!")
+    disp("Computer's Turn!")
+    avail = setdiff(avail, unavail) ; 
     compMoveThree = randi(length(avail), 1); % choosing a random point of vector
                                            % 'avail' to place the
                                            % computer's move
@@ -401,14 +416,25 @@ userMoveThree == "I"
         unavail = "H"; 
         disp(gameboard)
     
-    else 
-        avail(1, compMoveThree) == "I"
+    else
+        avail(1, compMoveThree) = "I" ;
         gameboard(3,3) = "O" ; 
         unavail = "I"; 
         disp(gameboard)
     
     end 
+    
         % checking win conditions
+
+    posA = gameboard(1,1);
+    posB = gameboard(1,2);
+    posC = gameboard(1,3);
+    posD = gameboard(2,1);
+    posE = gameboard(2,2);
+    posF = gameboard(2,3);
+    posG = gameboard(3,1);
+    posH = gameboard(3,2);
+    posI = gameboard(3,3); 
 
     if posA == "X" && posB == "X" && posC == "X" || ... % the ... continues the code into the next line
           posD == "X" && posE == "X" && posF == "X" || ...
@@ -419,9 +445,17 @@ userMoveThree == "I"
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
 
-    else  posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+        end 
+
+    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -430,15 +464,22 @@ userMoveThree == "I"
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+
+         newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end 
 
     end
   
-avail = setdiff(avail, unavail);   % updating available moves based on 
-                                     % computer's third move. 
+    avail = setdiff(avail, unavail);   % updating available moves based on 
+                                       % computer's third move. 
     
-   userMoveFour = input("Where would you like to place your fourth move? Remember: Be Strategic.", "s")
-
+   userMoveFour = input("Where would you like to place your fourth move? Remember: Be Strategic. ", "s") ;
     if userMoveFour == "A" 
         gameboard(1,1) = "X" ;
         unavail = "A" ; 
@@ -479,15 +520,27 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         unavail = "H" ;
         disp(gameboard)
 
-    else 
-        userMoveFour == "I" 
+    elseif userMoveFour == "I" 
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
 
+    else 
+    disp("Invalid Input. Starting Game Over")
+        continue
     end
 
     % checking win conditions
+
+    posA = gameboard(1,1);
+    posB = gameboard(1,2);
+    posC = gameboard(1,3);
+    posD = gameboard(2,1);
+    posE = gameboard(2,2);
+    posF = gameboard(2,3);
+    posG = gameboard(3,1);
+    posH = gameboard(3,2);
+    posI = gameboard(3,3); 
 
     if posA == "X" && posB == "X" && posC == "X" || ... % the ... continues the code into the next line
           posD == "X" && posE == "X" && posF == "X" || ...
@@ -498,9 +551,18 @@ avail = setdiff(avail, unavail);   % updating available moves based on
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
+        
+            newGame = questdlg("Would you like to play again?"); 
+            switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+            end 
+      
 
-    else posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -509,11 +571,19 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
 
+         newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end 
+  
     end
 
- avail = setdiff(avail, unavail) ;
+    avail = setdiff(avail, unavail);
 
     compMoveFour = randi(length(avail), 1); % choosing a random point of vector
                                            % 'avail' to place the
@@ -559,12 +629,23 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         unavail = "H"; 
         disp(gameboard)
     
-    else avail(1, compMoveFour) == "I"
+    else 
+        avail(1, compMoveFour) = "I" ;
         gameboard(3,3) = "O" ; 
         unavail = "I"; 
         disp(gameboard)
     
     end 
+
+    posA = gameboard(1,1);
+    posB = gameboard(1,2);
+    posC = gameboard(1,3);
+    posD = gameboard(2,1);
+    posE = gameboard(2,2);
+    posF = gameboard(2,3);
+    posG = gameboard(3,1);
+    posH = gameboard(3,2);
+    posI = gameboard(3,3); 
 
     % checking win conditions
     if posA == "X" && posB == "X" && posC == "X" || ... % the ... continues the code into the next line
@@ -576,10 +657,17 @@ avail = setdiff(avail, unavail);   % updating available moves based on
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break
 
-    else 
-        posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end  
+
+    elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
         posG == "O" && posH == "O" && posI == "O" || ... 
         posA == "O" && posD == "O" && posG == "O" || ...
@@ -588,14 +676,22 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break
+        
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end 
 
     end
 
     avail = setdiff(avail, unavail) ;  % updating available moves based on 
                                      % computer's second move. 
     
-   userMoveFive = input("Where would you like to place your fifth and final move? Remember: Be Strategic.", "s")
+   userMoveFive = input("Where would you like to place your fifth and final move? Remember: Be Strategic. ", "s");
 
     if userMoveFive == "A"
         gameboard(1,1) = "X" ;
@@ -637,13 +733,26 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         unavail = "H" ;
         disp(gameboard)
 
-    else 
-        userMoveFive == "I" 
+    elseif userMoveFive == "I" 
         gameboard(3,3) = "X" ;
         unavail = "I" ;
         disp(gameboard)
 
+    else 
+        disp("Invalid Input. Starting Game Over")
+        continue
+
     end
+
+  posA = gameboard(1,1);
+    posB = gameboard(1,2);
+    posC = gameboard(1,3);
+    posD = gameboard(2,1);
+    posE = gameboard(2,2);
+    posF = gameboard(2,3);
+    posG = gameboard(3,1);
+    posH = gameboard(3,2);
+    posI = gameboard(3,3); 
 
     % checking win conditions
     if posA == "X" && posB == "X" && posC == "X" || ... % the ... continues the code into the next line
@@ -655,7 +764,15 @@ avail = setdiff(avail, unavail);   % updating available moves based on
           posA == "X" && posE == "X" && posI == "X" || ...
           posC == "X" && posE == "X" && posG == "X" 
         disp("You Won!!!") 
-        break 
+
+         newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end  
 
     elseif posA == "O" && posB == "O" && posC == "O" || ... % the ... continues the code into the next line
         posD == "O" && posE == "O" && posF == "O" || ...
@@ -666,25 +783,35 @@ avail = setdiff(avail, unavail);   % updating available moves based on
         posA == "O" && posE == "O" && posI == "O" || ...
         posC == "O" && posE == "O" && posG == "O" 
         disp("Oh No! You Lost!!!") 
-        break 
+
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+       end 
+       
         
     else 
         disp('Oh No! There was a tie! No winner!')
+        newGame = questdlg("Would you like to play again?"); 
+        switch newGame
+                case 'Yes'
+             gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
+             continue
+                 case 'No'
+                  disp("Quitting Game! Goodbye!")
+                  break
+       end 
 
     end
 end
-
-   newGame = questdlg("Would you like to play again?") 
-    switch newGame
-        case 'No'
-            disp("Quitting Game! Goodbye!")
-        case 'Yes'
-            gameboard = ["A" "B" "C" ; "D" "E" "F" ; "G" "H" "I"]; 
-            disp(gameboard)
-            
-    end 
+      
 end 
-    while (userInput == "N")
+while (userInput == "N")
         disp("Quitting Game! Goodbye!")
-    end 
+        break
+end 
         
