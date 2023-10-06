@@ -7,7 +7,6 @@ function [sum1, diff1, prod1, max1] = Problem2(num1,num2)
 %   by typing the output names desired into [  ] prior to calling the
 %   function. Set the desired outputs equal to code calling the function
 %   and input the two numbers desired seperated by a comma. 
-
 sum1 = num1 + num2 ; 
 diff1 = (num1 - num2) ;
 prod1 = num1 * num2 ;
