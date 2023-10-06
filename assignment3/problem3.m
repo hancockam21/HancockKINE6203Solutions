@@ -14,5 +14,4 @@ if rem(total, 2) == 0
 else 
    textOut = 'Hah';
 end
-
 end

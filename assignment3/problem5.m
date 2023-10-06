@@ -10,7 +10,6 @@ function [answer] = problem5(array)
 % of the sorted array, a logical value of 0 is displayed, indicating a
 % false value. A false value means that the 3 numbers in the array do not
 % form a valid triangle. 
-
 updated = sort(array) ; 
 if ((updated(1) + updated(2)) > updated(3))
 answer = true ; 

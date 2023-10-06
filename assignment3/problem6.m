@@ -7,5 +7,4 @@ function [answer] = problem6(number)
 % shown indicating a true statement. If the number is not a prime number, a
 % logical value of 0 is shown indicating a false statment. 
 answer = isprime(number) ;
-
 end

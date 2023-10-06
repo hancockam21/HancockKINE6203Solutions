@@ -12,5 +12,5 @@ function [totalCoins] = Problem4(quarters, dimes, nickels, pennies)
 % don't have any dimes, input the number of quarters followed by 0 before
 % inputting the number of nickels and pennies. This ensures the inputs are
 % properly assoicated with the correct coin. 
-totalCoins = (0.25*quarters) + (0.10*dimes) + (0.05*nickels) + (0.01*pennies) ;
+totalCoins = (0.25*quarters) + (0.10*dimes) + (0.05*nickels) + (0.01*pennies);
 end

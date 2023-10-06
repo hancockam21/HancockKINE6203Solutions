@@ -6,6 +6,5 @@ function [finalNum] = Problem1(num1)
 % The user will only need to enter a single numberical input when calling
 % the function. Only a single output equal to finalNum will be displayed
 % after calling and running the function. 
-
 finalNum = 2*num1
 end
